@@ -56,7 +56,8 @@ public class GameBoardPanel extends JPanel {
     */
    public void newGame() {
       // Generate a new puzzle
-      Puzzle.getInstance();
+      System.out.println("newGame Method Called");
+      Puzzle.getInstance().newBoard();
 
       // Initialize all the 9x9 cells, based on the puzzle.
       for (int row = 0; row < GRID_SIZE; ++row) {

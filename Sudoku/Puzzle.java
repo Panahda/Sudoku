@@ -25,15 +25,36 @@ public final class Puzzle {
     }
 
     private void createMissingDigits2DArray(int digitsMissing){
+        setAllTrue();
+        for(int count = 0; count < digitsMissing; count ++){
+            removeDigit();
+        }
+    }
+
+    private void setAllTrue(){
         for(int row = 0; row < GameBoardPanel.GRID_SIZE; row++){
             for(int col = 0; col < GameBoardPanel.GRID_SIZE; col ++){
-                if(col == randomNumberGenerator()-1){
+                isGiven[row][col] = true;
+            }
+        }
+    }
+
+    private void removeDigit(){
+        int deleteRow;
+        int deleteCol;
+        do{
+            deleteRow = randomNumberGenerator()-1;
+            deleteCol = randomNumberGenerator()-1;
+        }while(!isGiven[deleteRow][deleteCol]);
+        
+        for(int row = 0; row < GameBoardPanel.GRID_SIZE; row++){
+            for(int col = 0; col < GameBoardPanel.GRID_SIZE; col ++){
+                if(row == deleteRow && col == deleteCol){
                     isGiven[row][col] = false;
-                }else{
-                    isGiven[row][col] = true;
                 }
             }
         }
+        
     }
 
     private void fillDiagonalSubgrid(){
@@ -151,4 +172,13 @@ public final class Puzzle {
         return newPuzzle;
     }
 
+    public void newBoard(){
+        for (int row = 0; row < 9; row++) {
+            for (int col = 0; col < 9; col++) {
+               numbers[row][col] = 0;
+            }
+         }
+        fillGameGrid();
+        createMissingDigits2DArray(puzzleMissingDigitArray[0]);
+    }
 }

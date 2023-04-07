@@ -48,9 +48,8 @@ public class SudokuMain extends JFrame {
 
     private class BtnInputListener implements ActionListener {
     	@Override
-    	public void actionPerformed(ActionEvent evt) {
-    		board.newGame();
-    		Puzzle.getInstance();
+    	public void actionPerformed(ActionEvent evt){
+         board.newGame();
     	}
     }
 }
