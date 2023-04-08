@@ -208,6 +208,7 @@ public final class Puzzle {
             }
          }
         fillGameGrid();
-        createMissingDigits2DArray(puzzleMissingDigitArray[2]);
+        //diffuilty
+        createMissingDigits2DArray(puzzleMissingDigitArray[0]);
     }
 }

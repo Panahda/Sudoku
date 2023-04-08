@@ -1,7 +1,6 @@
 package Sudoku;
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 /**
@@ -13,6 +12,7 @@ public class SudokuMain extends JFrame {
    // private variables
    GameBoardPanel board = new GameBoardPanel();
    JButton btnNewGame = new JButton("New Game");
+   GameClock timer = new GameClock();
  
    // Constructor
    public SudokuMain() {
@@ -21,11 +21,14 @@ public class SudokuMain extends JFrame {
 
       cp.add(board, BorderLayout.CENTER);
 
+      //Add timer on top of gameboard
+      cp.add(timer, BorderLayout.NORTH);
+
       // Add a button to the south to re-start the game via board.newGame()
-      // ......
       cp.add(btnNewGame, BorderLayout.SOUTH);
       BtnInputListener listener = new BtnInputListener();
       btnNewGame.addActionListener(listener);
+
       // Initialize the game board to start the game
       board.newGame();
 
@@ -46,10 +49,12 @@ public class SudokuMain extends JFrame {
     }
     
 
+    //When button is pressed, gameboard and timer resets
     private class BtnInputListener implements ActionListener {
     	@Override
     	public void actionPerformed(ActionEvent evt){
          board.newGame();
+         timer.reset();
     	}
     }
 }

@@ -2,6 +2,10 @@ package Sudoku;
 
 public class testing{
     public static void main(String args[]){
+        
+
+        GameTimer gt = new GameTimer();
+
         Puzzle newP = Puzzle.getInstance();
 
 

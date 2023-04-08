@@ -34,11 +34,9 @@ public class GameBoardPanel extends JPanel {
          }
       }
 
-      // [TODO 3] Allocate a common listener as the ActionEvent listener for all the
       //  Cells (JTextFields)
       CellInputListener listener = new CellInputListener();
 
-      // [TODO 4] Adds this common listener to all editable cells
       for (int row = 0; row < GRID_SIZE; ++row) {
         for (int col = 0; col < GRID_SIZE; ++col) {
            if (cells[row][col].isEditable()) {
@@ -82,7 +80,7 @@ public class GameBoardPanel extends JPanel {
       return true;
    }
 
-   // [TODO 2] Define a Listener Inner Class for all the editable Cells
+   //  Define a Listener Inner Class for all the editable Cells
    private class CellInputListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -95,17 +93,11 @@ public class GameBoardPanel extends JPanel {
        System.out.println("You entered " + numberIn);
 
        /*
-          * [TODO 5] (later - after TODO 3 and 4)
           * Check the numberIn against sourceCell.number.
           * Update the cell status sourceCell.status,
           * and re-paint the cell via sourceCell.paint().
           */
-          //if (numberIn == sourceCell.number) {
-          //   sourceCell.status = CellStatus.CORRECT_GUESS;
-          //} else {
-          //   ......
-          //}
-          //sourceCell.paint();   // re-paint this cell based on its status
+
         if (numberIn == sourceCell.number){
             sourceCell.status = CellStatus.CORRECT_GUESS;
             sourceCell.paint();
