@@ -15,7 +15,7 @@ public class GameBoardPanel extends JPanel {
    public static final int BOARD_WIDTH  = CELL_SIZE * GRID_SIZE;
    public static final int BOARD_HEIGHT = CELL_SIZE * GRID_SIZE;
                                              // Board width/height in pixels
-
+   
    // Define properties
    /** The game board composes of 9x9 Cells (customized JTextFields) */
    private Cell[][] cells = new Cell[GRID_SIZE][GRID_SIZE];
@@ -24,30 +24,40 @@ public class GameBoardPanel extends JPanel {
 
    /** Constructor */
    public GameBoardPanel() {
-      super.setLayout(new GridLayout(GRID_SIZE, GRID_SIZE));  // JPanel
+	   super(new GridLayout(GRID_SIZE / SUBGRID_SIZE, GRID_SIZE / SUBGRID_SIZE));  // JPanel
 
-      // Allocate the 2D array of Cell, and added into JPanel.
-      for (int row = 0; row < GRID_SIZE; ++row) {
-         for (int col = 0; col < GRID_SIZE; ++col) {
-            cells[row][col] = new Cell(row, col);
-            super.add(cells[row][col]);   // JPanel
-         }
-      }
+	   // Allocate the 2D array of Cell, and add to sub-grids
+	   for (int subRow = 0; subRow < SUBGRID_SIZE; ++subRow) {
+	      for (int subCol = 0; subCol < SUBGRID_SIZE; ++subCol) {
+	         JPanel subGrid = new JPanel(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
+	         subGrid.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+	         super.add(subGrid);   // add sub-grid to main panel
 
-      //  Cells (JTextFields)
-      CellInputListener listener = new CellInputListener();
+	         for (int row = 0; row < SUBGRID_SIZE; ++row) {
+	            for (int col = 0; col < SUBGRID_SIZE; ++col) {
+	               int absRow = subRow * SUBGRID_SIZE + row;
+	               int absCol = subCol * SUBGRID_SIZE + col;
+	               cells[absRow][absCol] = new Cell(absRow, absCol);
+	               subGrid.add(cells[absRow][absCol]);   // add cell to sub-grid
+	            }
+	         }
+	      }
+	   }
 
-      for (int row = 0; row < GRID_SIZE; ++row) {
-        for (int col = 0; col < GRID_SIZE; ++col) {
-           if (cells[row][col].isEditable()) {
-              cells[row][col].addActionListener(listener);   // For all editable rows and cols
-           }
-        }
-     }
+	   //  Cells (JTextFields)
+	   CellInputListener listener = new CellInputListener();
 
-      super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
-   }
+	   for (int row = 0; row < GRID_SIZE; ++row) {
+	      for (int col = 0; col < GRID_SIZE; ++col) {
+	         if (cells[row][col].isEditable()) {
+	            cells[row][col].addActionListener(listener);   // For all editable rows and cols
+	         }
+	      }
+	   }
 
+	   super.setPreferredSize(new Dimension(BOARD_WIDTH, BOARD_HEIGHT));
+	}
+               
    /**
     * Generate a new puzzle; and reset the gameboard of cells based on the puzzle.
     * You can call this method to start a new game.
@@ -65,6 +75,7 @@ public class GameBoardPanel extends JPanel {
       }
    }
 
+   
    /**
     * Return true if the puzzle is solved
     * i.e., none of the cell have status of TO_GUESS or WRONG_GUESS
