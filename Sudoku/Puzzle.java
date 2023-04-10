@@ -209,6 +209,6 @@ public final class Puzzle {
          }
         fillGameGrid();
         //diffuilty
-        createMissingDigits2DArray(puzzleMissingDigitArray[0]);
+        createMissingDigits2DArray(1/*puzzleMissingDigitArray[0]*/); //temporary
     }
 }

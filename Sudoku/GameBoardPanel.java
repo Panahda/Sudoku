@@ -21,6 +21,7 @@ public class GameBoardPanel extends JPanel {
    private Cell[][] cells = new Cell[GRID_SIZE][GRID_SIZE];
    /** It also contains a Puzzle with array numbers and isGiven */
    private Puzzle puzzle = Puzzle.getInstance();
+   private GameClock timer = GameClock.getInstance();
 
    /** Constructor */
    public GameBoardPanel() {
@@ -118,11 +119,19 @@ public class GameBoardPanel extends JPanel {
         }
 
         // [TODO 6]
-        if (numberIn == sourceCell.number) {
-        	JOptionPane.showMessageDialog(null, "Congratulation!");
-        } else {
-        	JOptionPane.showMessageDialog(null, "Try again!");
-        }
-        }
-    }
+         if (numberIn == sourceCell.number) {
+            JOptionPane.showMessageDialog(null, "Congratulation!");
+         } else {
+            JOptionPane.showMessageDialog(null, "Try again!");
+         }
+
+
+         //Once puzzle completed, timer stops and add to highscore
+         if(isSolved()){
+            timer.stop();
+            HighScoreDatabase.getInstance().addNewScore(timer.elapsedTime);
+            HighScore.getInstance().updateScore();
+         }
+      }
+   }
 }

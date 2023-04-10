@@ -12,7 +12,8 @@ public class SudokuMain extends JFrame {
    // private variables
    GameBoardPanel board = new GameBoardPanel();
    JButton btnNewGame = new JButton("New Game");
-   GameClock timer = new GameClock();
+   GameClock timer = GameClock.getInstance();
+   HighScore highscore = HighScore.getInstance();
  
    // Constructor
    public SudokuMain() {
@@ -20,6 +21,8 @@ public class SudokuMain extends JFrame {
       cp.setLayout(new BorderLayout());
 
       cp.add(board, BorderLayout.CENTER);
+
+      cp.add(highscore, BorderLayout.WEST);
 
       //Add timer on top of gameboard
       cp.add(timer, BorderLayout.NORTH);
@@ -39,14 +42,14 @@ public class SudokuMain extends JFrame {
    }
 
    /** The entry main() entry method */
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-           @Override
-           public void run() {
-              new SudokuMain(); // Let the constructor does the job
-           }
-        });
-    }
+   public static void main(String[] args) {
+      SwingUtilities.invokeLater(new Runnable() {
+         @Override
+         public void run() {
+            new SudokuMain(); // Let the constructor does the job
+         }
+      });
+   }
     
 
     //When button is pressed, gameboard and timer resets
@@ -56,5 +59,6 @@ public class SudokuMain extends JFrame {
          board.newGame();
          timer.reset();
     	}
-    }
+   }
+
 }
