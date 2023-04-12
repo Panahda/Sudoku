@@ -6,7 +6,7 @@ import javax.swing.*;
 import Sudoku.bin.ExtraFeatures.GameBoardPanel;
 import Sudoku.bin.ExtraFeatures.GameClock;
 import Sudoku.bin.HighScore.HighScore;
-import Sudoku.bin.Utility.Colours;
+import Sudoku.bin.Utility.*;
 
 /**
  * The main Sudoku program
@@ -26,6 +26,7 @@ public class SudokuGame extends JFrame {
    }
    // Constructor
    public SudokuGame(int difficulty) {
+        
       Container cp = getContentPane();
 
       cp.setBackground(Colours.FG_GIVEN);

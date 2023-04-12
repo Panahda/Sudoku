@@ -21,9 +21,12 @@ public class SudokuMain extends JFrame{
     
     public static void main(String[] args){
     	SwingUtilities.invokeLater(new Runnable(){
-    	public void run() {
-        new SudokuMain();
-    	}
+            public void run() {
+                new SudokuMain();
+                
+                BGMusic music = new BGMusic("SudokuMusic.wav");
+                music.play();
+            }
     	});
     }
 
@@ -62,6 +65,7 @@ public class SudokuMain extends JFrame{
         
         StartBtnInputListener listener = new StartBtnInputListener();
         startButton.addActionListener(listener);
+
     }
         private class StartBtnInputListener implements ActionListener {
         	@Override

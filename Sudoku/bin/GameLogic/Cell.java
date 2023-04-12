@@ -49,15 +49,21 @@ public class Cell extends JTextField {
          super.setEditable(false);
          super.setBackground(Colours.BG_GIVEN);
          super.setForeground(Colours.FG_GIVEN);
+   
       } else if (status == CellStatus.TO_GUESS) {
          // Inherited from JTextField: Set display properties
          super.setText("");
          super.setEditable(true);
          super.setBackground(Colours.BG_TO_GUESS);
          super.setForeground(Colours.FG_NOT_GIVEN);
+      
       } else if (status == CellStatus.CORRECT_GUESS) {  // from TO_GUESS
          super.setBackground(Colours.BG_CORRECT_GUESS);
+      
       } else if (status == CellStatus.WRONG_GUESS) {    // from TO_GUESS
+         super.setBackground(Colours.BG_WRONG_GUESS);
+
+      } else if (status == CellStatus.COLLISION) {
          super.setBackground(Colours.BG_WRONG_GUESS);
       }
    }
