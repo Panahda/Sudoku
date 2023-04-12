@@ -1,10 +1,10 @@
-package Sudoku.Sudoku.bin.HighScore;
+package Sudoku.bin.HighScore;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-import Sudoku.Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.bin.ExtraFeatures.GameBoardPanel;
 
 import java.awt.*;
 

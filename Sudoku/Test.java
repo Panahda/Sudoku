@@ -1,1 +1,1 @@
-package Sudoku.Sudoku;
+package Sudoku;
