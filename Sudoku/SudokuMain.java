@@ -14,9 +14,13 @@ public class SudokuMain extends JFrame {
    JButton btnNewGame = new JButton("New Game");
    GameClock timer = GameClock.getInstance();
    HighScore highscore = HighScore.getInstance();
- 
+   public static int x;
+   
+   public void setSudokuDiff(int x) {
+	   SudokuMain.x=x;
+   }
    // Constructor
-   public SudokuMain() {
+   public SudokuMain(int x) {
       Container cp = getContentPane();
       cp.setLayout(new BorderLayout());
 
@@ -31,7 +35,7 @@ public class SudokuMain extends JFrame {
       cp.add(btnNewGame, BorderLayout.SOUTH);
       BtnInputListener listener = new BtnInputListener();
       btnNewGame.addActionListener(listener);
-
+      board.setX(x);
       // Initialize the game board to start the game
       board.newGame();
 
@@ -46,7 +50,7 @@ public class SudokuMain extends JFrame {
       SwingUtilities.invokeLater(new Runnable() {
          @Override
          public void run() {
-            new SudokuMain(); // Let the constructor does the job
+            new SudokuMain(x); // Let the constructor does the job
          }
       });
    }
@@ -56,8 +60,8 @@ public class SudokuMain extends JFrame {
     private class BtnInputListener implements ActionListener {
     	@Override
     	public void actionPerformed(ActionEvent evt){
-         board.newGame();
-         timer.reset();
+    		board.newGame();
+    		timer.reset();
     	}
    }
 
