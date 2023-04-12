@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-import Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.bin.GameLogic.GameBoardPanel;
 import Sudoku.bin.Utility.*;
 
 import java.awt.*;

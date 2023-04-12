@@ -4,12 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Sudoku.bin.GameLogic.GameBoardPanel;
 import Sudoku.bin.Utility.*;
 
 public class GameClock extends JPanel{
 
     //initialise values
-    int elapsedTime = 0;
+    public int elapsedTime = 0;
     int seconds = 0;
     int minutes = 0;
     int hours = 0;

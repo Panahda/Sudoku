@@ -1,8 +1,6 @@
 package Sudoku.bin.GameLogic;
 import java.util.Random;
 
-import Sudoku.bin.ExtraFeatures.GameBoardPanel;
-
 public final class Puzzle {
 
     //initialise 2D arrays and variables
@@ -207,7 +205,7 @@ public final class Puzzle {
     public void newBoard(int difficulty){
 
         //Testing
-        difficulty = 3;
+        //difficulty = 3;
 
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {

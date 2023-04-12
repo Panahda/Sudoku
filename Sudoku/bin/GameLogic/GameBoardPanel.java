@@ -1,9 +1,10 @@
-package Sudoku.bin.ExtraFeatures;
+package Sudoku.bin.GameLogic;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Sudoku.bin.ExtraFeatures.GameClock;
 import Sudoku.bin.GameLogic.*;
 import Sudoku.bin.HighScore.*;
 import Sudoku.bin.Utility.*;
