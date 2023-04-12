@@ -6,6 +6,8 @@ public class HighScoreDatabase{
     int index = 0;
     
     public LinkedList<Integer> highScoreLL = new LinkedList<>();
+    public LinkedList<String> highScoreNameLL = new LinkedList<>();
+
     int highScoreCount = 0;
 
     //Singleton
@@ -13,24 +15,31 @@ public class HighScoreDatabase{
 
     public HighScoreDatabase(){}
 
-    public void addNewScore(int newScore){
-
-        ListIterator<Integer> highScoreLLIterator = highScoreLL.listIterator(0);
+    public void addNewScore(int newScore, String newName){
 
         if(highScoreCount == 0){
             highScoreLL.add(newScore);
+            highScoreNameLL.add(newName);
+
             highScoreCount ++;
         }else{
             index = 0;
-            while(highScoreLLIterator.hasNext() && highScoreLL.get(index) < newScore){
+            while(index != highScoreLL.size() && highScoreLL.get(index) < newScore){
                 index++;
             }
 
-            highScoreLL.add(index, newScore);
+            if (highScoreLL.size() <= index) {
+                highScoreLL.add(newScore);
+                highScoreNameLL.add(newName);
+            } else {
+                highScoreLL.add(index, newScore);
+                highScoreNameLL.add(index, newName);
+            }
+            
             highScoreCount ++;
         }
 
-        System.out.println("HighScore LinkedList : " + highScoreLL);
+        System.out.println("HighScore LinkedList : " + highScoreLL + highScoreNameLL);
     }
 
     public static HighScoreDatabase getInstance(){

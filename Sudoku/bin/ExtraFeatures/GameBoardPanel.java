@@ -19,6 +19,10 @@ public class GameBoardPanel extends JPanel {
    public static final int BOARD_WIDTH  = CELL_SIZE * GRID_SIZE;
    public static final int BOARD_HEIGHT = CELL_SIZE * GRID_SIZE;
                                              // Board width/height in pixels
+
+   //namefield
+   private JTextField nameField;
+   
    public int difficulty;
    // Define properties
    /** The game board composes of 9x9 Cells (customized JTextFields) */
@@ -121,7 +125,7 @@ public class GameBoardPanel extends JPanel {
             sourceCell.status = CellStatus.WRONG_GUESS;
             sourceCell.paint();
         }
-        
+
          if (numberIn == sourceCell.number) {
             JOptionPane.showMessageDialog(null, "Congratulation!");
          } else {
@@ -132,8 +136,17 @@ public class GameBoardPanel extends JPanel {
          //Once puzzle completed, timer stops and add to highscore
          if(isSolved()){
             timer.stop();
-            HighScoreDatabase.getInstance().addNewScore(timer.elapsedTime);
+            
+            nameField = new JTextField();
+            add(nameField, BorderLayout.NORTH);
+            //prompt for newName
+            String name = JOptionPane.showInputDialog("Enter your name:");
+            nameField.setText(name);
+
+            HighScoreDatabase.getInstance().addNewScore(timer.elapsedTime, name);
             HighScore.getInstance().updateScore();
+
+            remove(nameField);
          }
       }
    }
