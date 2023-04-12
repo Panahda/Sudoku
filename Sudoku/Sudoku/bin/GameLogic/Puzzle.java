@@ -1,14 +1,16 @@
-package Sudoku;
+package Sudoku.Sudoku.bin.GameLogic;
 import java.util.Random;
+
+import Sudoku.Sudoku.bin.ExtraFeatures.GameBoardPanel;
 
 public final class Puzzle {
 
     //initialise 2D arrays and variables
-    int numbers[][] = new int [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
-    boolean isGiven[][] = new boolean [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
+    public int numbers[][] = new int [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
+    public boolean isGiven[][] = new boolean [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
     final int maxPuzzleDifficulty = 3;
-    int puzzleCurrentDifficultyLevel = 1;
-    int puzzleMissingDigitArray[] = new int[3];
+    public int puzzleCurrentDifficultyLevel = 1;
+    public int puzzleMissingDigitArray[] = new int[3];
 
 
     //puzzle object

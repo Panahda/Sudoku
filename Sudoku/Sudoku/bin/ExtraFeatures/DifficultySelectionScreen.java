@@ -1,9 +1,11 @@
-package Sudoku;
+package Sudoku.Sudoku.bin.ExtraFeatures;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DifficultyScreen extends JFrame{
+import Sudoku.Sudoku.bin.SudokuGame;
+
+public class DifficultySelectionScreen extends JFrame{
     
     private static final long serialVersionUID = 1L;
 	JFrame window;
@@ -15,15 +17,9 @@ public class DifficultyScreen extends JFrame{
     Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
     JButton easyButton, intermediateButton,hardButton;
     
-    public static void main(String[] args){
-    	SwingUtilities.invokeLater(new Runnable(){
-    	public void run() {
-        new DifficultyScreen();
-    	}
-    	});
-    }
 
-    public DifficultyScreen(){
+
+    public DifficultySelectionScreen(){
         window = new JFrame();
         window.setSize(800,600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -82,21 +78,21 @@ public class DifficultyScreen extends JFrame{
     }
         private class EasyBtnInputListener implements ActionListener {
         	public void actionPerformed(ActionEvent evt) {
-        		new SudokuMain(0);
+        		new SudokuGame(0);
         		window.dispose();
         	}
         }
         
         private class IntermediateBtnInputListener implements ActionListener {
         	public void actionPerformed(ActionEvent evt) {
-        		new SudokuMain(1);
+        		new SudokuGame(1);
         		window.dispose();
         	}
         }
         
         private class HardBtnInputListener implements ActionListener {
         	public void actionPerformed(ActionEvent evt) {
-        		new SudokuMain(2);
+        		new SudokuGame(2);
         		window.dispose();
         	}
         }

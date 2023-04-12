@@ -1,9 +1,11 @@
-package Sudoku;
+package Sudoku.Sudoku;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class StartingScreen extends JFrame{
+import Sudoku.Sudoku.bin.ExtraFeatures.DifficultySelectionScreen;
+
+public class SudokuMain extends JFrame{
     
     private static final long serialVersionUID = 1L;
 	JFrame window;
@@ -17,12 +19,12 @@ public class StartingScreen extends JFrame{
     public static void main(String[] args){
     	SwingUtilities.invokeLater(new Runnable(){
     	public void run() {
-        new StartingScreen();
+        new SudokuMain();
     	}
     	});
     }
 
-    public StartingScreen(){
+    public SudokuMain(){
         window = new JFrame();
         window.setSize(800,600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,7 +62,7 @@ public class StartingScreen extends JFrame{
         private class StartBtnInputListener implements ActionListener {
         	@Override
         	public void actionPerformed(ActionEvent evt) {
-        		new DifficultyScreen();
+        		new DifficultySelectionScreen();
         		window.dispose();
         	}
         }

@@ -1,4 +1,4 @@
-package Sudoku;
+package Sudoku.Sudoku.bin.GameLogic;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -24,9 +24,9 @@ public class Cell extends JTextField {
    /** The row and column number [0-8] of this cell */
    int row, col;
    /** The puzzle number [1-9] for this cell */
-   int number;
+   public int number;
    /** The status of this cell defined in enum CellStatus */
-   CellStatus status;
+   public CellStatus status;
 
    /** Constructor */
    public Cell(int row, int col) {

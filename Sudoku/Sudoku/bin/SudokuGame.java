@@ -1,12 +1,16 @@
-package Sudoku;
+package Sudoku.Sudoku.bin;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import Sudoku.Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.Sudoku.bin.ExtraFeatures.GameClock;
+import Sudoku.Sudoku.bin.HighScore.HighScore;
+
 /**
  * The main Sudoku program
  */
-public class SudokuMain extends JFrame {
+public class SudokuGame extends JFrame {
    private static final long serialVersionUID = 1L;  // to prevent serial warning
 
    // private variables
@@ -17,10 +21,10 @@ public class SudokuMain extends JFrame {
    public static int x;
    
    public void setSudokuDiff(int x) {
-	   SudokuMain.x=x;
+	   SudokuGame.x=x;
    }
    // Constructor
-   public SudokuMain(int x) {
+   public SudokuGame(int x) {
       Container cp = getContentPane();
       cp.setLayout(new BorderLayout());
 
@@ -45,15 +49,15 @@ public class SudokuMain extends JFrame {
       setVisible(true);
    }
 
-   /** The entry main() entry method */
-   public static void main(String[] args) {
-      SwingUtilities.invokeLater(new Runnable() {
-         @Override
-         public void run() {
-            new SudokuMain(x); // Let the constructor does the job
-         }
-      });
-   }
+   // /** The entry main() entry method */
+   // public static void main(String[] args) {
+   //    SwingUtilities.invokeLater(new Runnable() {
+   //       @Override
+   //       public void run() {
+   //          new SudokuGame(x); // Let the constructor does the job
+   //       }
+   //    });
+   // }
     
 
     //When button is pressed, gameboard and timer resets

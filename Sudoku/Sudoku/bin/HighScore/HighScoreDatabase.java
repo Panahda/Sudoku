@@ -1,4 +1,4 @@
-package Sudoku;
+package Sudoku.Sudoku.bin.HighScore;
 import java.util.*;
 
 public class HighScoreDatabase{

@@ -1,8 +1,10 @@
-package Sudoku;
+package Sudoku.Sudoku.bin.ExtraFeatures;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import Sudoku.Sudoku.bin.GameLogic.Cell;
 
 public class GameClock extends JPanel{
 
