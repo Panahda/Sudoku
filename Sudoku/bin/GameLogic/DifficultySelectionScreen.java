@@ -1,9 +1,9 @@
-package Sudoku.bin.ExtraFeatures;
+package Sudoku.bin.GameLogic;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.bin.SudokuGame;
+import Sudoku.bin.Utility.*;
 
 public class DifficultySelectionScreen extends JFrame{
     
@@ -12,9 +12,13 @@ public class DifficultySelectionScreen extends JFrame{
     Container con;
     JPanel titleNamePanel, diffButtonPanel;
     JLabel titleNameLabel, diffLabel;
-    Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
-    Font diffFont = new Font("Times New Roman", Font.PLAIN, 60);
-    Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
+
+    //Fonts
+    Font sudokuTitle = Fonts.loadFont(200);
+    Font normalFont = new Font("Serif", Font.PLAIN, 30);
+    Font diffFont = Fonts.loadFont(60);
+
+
     JButton easyButton, intermediateButton,hardButton;
     
 
@@ -28,34 +32,37 @@ public class DifficultySelectionScreen extends JFrame{
         window.setVisible(true);
         con = window.getContentPane();
 
+        //title Initialisation
         titleNamePanel = new JPanel();
         titleNamePanel.setBounds(100,100,600,150);
-        titleNamePanel.setBackground(Color.black);
+        titleNamePanel.setBackground(Colours.FG_GIVEN);
         
         titleNameLabel = new JLabel("  Sudoku  ");
-        titleNameLabel.setForeground(Color.white);
-        titleNameLabel.setFont(titleFont);
+        titleNameLabel.setForeground(Colours.BG_CORRECT_GUESS);
+        titleNameLabel.setFont(sudokuTitle);
+
         diffLabel = new JLabel("  Select Difficulty  ");
-        diffLabel.setForeground(Color.white);
+        diffLabel.setForeground(Colours.white_yellow);
         diffLabel.setFont(diffFont);
         
+        //buttons initialisation
         diffButtonPanel = new JPanel(); 
         diffButtonPanel.setLayout(new GridLayout(3, 1, 0, 20));
-        diffButtonPanel.setBackground(Color.black);
+        diffButtonPanel.setBackground(Colours.FG_GIVEN);
         
         easyButton = new JButton("Easy");
-        easyButton.setBackground(Color.white);
-        easyButton.setForeground(Color.black);
+        easyButton.setBackground(Colours.white_yellow);
+        easyButton.setForeground(Colours.FG_GIVEN);
         easyButton.setFont(normalFont);
 
         intermediateButton = new JButton("Intermediate");
-        intermediateButton.setBackground(Color.white);
-        intermediateButton.setForeground(Color.black);
+        intermediateButton.setBackground(Colours.white_yellow);
+        intermediateButton.setForeground(Colours.FG_GIVEN);
         intermediateButton.setFont(normalFont);
         
         hardButton = new JButton("Difficult");
-        hardButton.setBackground(Color.white);
-        hardButton.setForeground(Color.black);
+        hardButton.setBackground(Colours.white_yellow);
+        hardButton.setForeground(Colours.FG_GIVEN);
         hardButton.setFont(normalFont);
         
         titleNamePanel.add(titleNameLabel, BorderLayout.NORTH);

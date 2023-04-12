@@ -8,9 +8,9 @@ public final class Puzzle {
     //initialise 2D arrays and variables
     public int numbers[][] = new int [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
     public boolean isGiven[][] = new boolean [GameBoardPanel.GRID_SIZE][GameBoardPanel.GRID_SIZE];
-    final int maxPuzzleDifficulty = 3;
+    final int maxPuzzleDifficulty = 4;
     public int puzzleCurrentDifficultyLevel = 1;
-    public int puzzleMissingDigitArray[] = new int[3];
+    public int puzzleMissingDigitArray[] = new int[maxPuzzleDifficulty];
 
 
     //puzzle object
@@ -22,6 +22,7 @@ public final class Puzzle {
         puzzleMissingDigitArray[0] = 18;
         puzzleMissingDigitArray[1] = 36;
         puzzleMissingDigitArray[2] = 54;
+        puzzleMissingDigitArray[3] = 1; //testing purposes
 
         fillGameGrid();
         createMissingDigits2DArray(maxPuzzleDifficulty);
@@ -203,7 +204,11 @@ public final class Puzzle {
     }
 
     //public method to reset the instance to new numbers; 
-    public void newBoard(int x){
+    public void newBoard(int difficulty){
+
+        //Testing
+        difficulty = 3;
+
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                numbers[row][col] = 0;
@@ -211,6 +216,6 @@ public final class Puzzle {
          }
         fillGameGrid(); 
         // difficulty
-        createMissingDigits2DArray(puzzleMissingDigitArray[x]);
+        createMissingDigits2DArray(puzzleMissingDigitArray[difficulty]);
     }
 }

@@ -5,6 +5,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 import Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.bin.Utility.*;
 
 import java.awt.*;
 
@@ -22,9 +23,9 @@ public class HighScore extends JPanel{
     private static final HighScore highscore = new HighScore();
 
     HighScore(){
-
         super.setPreferredSize(new Dimension(200,GameBoardPanel.BOARD_HEIGHT+60));
-        
+        super.setBackground(Colours.FG_GIVEN);
+
         // Set up the panel
         setLayout(new BorderLayout());
 
@@ -34,10 +35,19 @@ public class HighScore extends JPanel{
         table = new JTable(tableModel);
 
         table.setRowHeight(30);
-        table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 20));
-        table.setFont(new Font("Arial", Font.PLAIN, 20));
+
+        table.getTableHeader().setFont(new Font("Serif", Font.BOLD, 20));
+        table.setFont(new Font("Serif", Font.PLAIN, 20));
+
+        table.getTableHeader().setBackground(Color.WHITE);
+        table.getTableHeader().setForeground(Colours.FG_GIVEN);
+        table.setBackground(Colours.white_yellow);
+        table.setForeground(Colours.FG_GIVEN);
+
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
+
+        scrollPane.getViewport().setBackground(Color.WHITE);
 
         // Set the preferred width of the "Rank" column to 50 pixels
         TableColumnModel columnModel = table.getColumnModel();

@@ -1,4 +1,4 @@
-package Sudoku.bin;
+package Sudoku.bin.GameLogic;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -6,6 +6,7 @@ import javax.swing.*;
 import Sudoku.bin.ExtraFeatures.GameBoardPanel;
 import Sudoku.bin.ExtraFeatures.GameClock;
 import Sudoku.bin.HighScore.HighScore;
+import Sudoku.bin.Utility.Colours;
 
 /**
  * The main Sudoku program
@@ -18,14 +19,17 @@ public class SudokuGame extends JFrame {
    JButton btnNewGame = new JButton("New Game");
    GameClock timer = GameClock.getInstance();
    HighScore highscore = HighScore.getInstance();
-   public static int x;
+   public static int difficulty;
    
-   public void setSudokuDiff(int x) {
-	   SudokuGame.x=x;
+   public void setSudokuDiff(int difficulty) {
+	   SudokuGame.difficulty = difficulty;
    }
    // Constructor
-   public SudokuGame(int x) {
+   public SudokuGame(int difficulty) {
       Container cp = getContentPane();
+
+      cp.setBackground(Colours.FG_GIVEN);
+
       cp.setLayout(new BorderLayout());
 
       cp.add(board, BorderLayout.CENTER);
@@ -37,9 +41,13 @@ public class SudokuGame extends JFrame {
 
       // Add a button to the south to re-start the game via board.newGame()
       cp.add(btnNewGame, BorderLayout.SOUTH);
+
       BtnInputListener listener = new BtnInputListener();
       btnNewGame.addActionListener(listener);
-      board.setX(x);
+      btnNewGame.setBackground(Colours.white_yellow);
+      btnNewGame.setForeground(Colours.FG_GIVEN);
+
+      board.setDifficulty(difficulty);
       // Initialize the game board to start the game
       board.newGame();
 

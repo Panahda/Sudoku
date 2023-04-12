@@ -19,7 +19,7 @@ public class GameBoardPanel extends JPanel {
    public static final int BOARD_WIDTH  = CELL_SIZE * GRID_SIZE;
    public static final int BOARD_HEIGHT = CELL_SIZE * GRID_SIZE;
                                              // Board width/height in pixels
-   public int x;
+   public int difficulty;
    // Define properties
    /** The game board composes of 9x9 Cells (customized JTextFields) */
    private Cell[][] cells = new Cell[GRID_SIZE][GRID_SIZE];
@@ -30,7 +30,8 @@ public class GameBoardPanel extends JPanel {
    /** Constructor */
    public GameBoardPanel() {
 	   super(new GridLayout(GRID_SIZE / SUBGRID_SIZE, GRID_SIZE / SUBGRID_SIZE));  // JPanel
-
+      super.setBackground(Colours.FG_GIVEN);
+      
 	   // Allocate the 2D array of Cell, and add to sub-grids
 	   for (int subRow = 0; subRow < SUBGRID_SIZE; ++subRow) {
 	      for (int subCol = 0; subCol < SUBGRID_SIZE; ++subCol) {
@@ -70,7 +71,7 @@ public class GameBoardPanel extends JPanel {
    public void newGame() {
       // Generate a new puzzle
       System.out.println("newGame Method Called");
-      Puzzle.getInstance().newBoard(x);
+      Puzzle.getInstance().newBoard(difficulty);
 
       // Initialize all the 9x9 cells, based on the puzzle.
       for (int row = 0; row < GRID_SIZE; ++row) {
@@ -138,7 +139,7 @@ public class GameBoardPanel extends JPanel {
       }
    }
    
-   public void setX(int x) {
-	   this.x=x;
+   public void setDifficulty(int difficulty) {
+	   this.difficulty = difficulty;
    }
 }

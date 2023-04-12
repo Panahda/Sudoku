@@ -1,9 +1,11 @@
 package Sudoku;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
-import Sudoku.bin.ExtraFeatures.DifficultySelectionScreen;
+import Sudoku.bin.GameLogic.DifficultySelectionScreen;
+import Sudoku.bin.Utility.*;
 
 public class SudokuMain extends JFrame{
     
@@ -12,8 +14,9 @@ public class SudokuMain extends JFrame{
     Container con;
     JPanel titleNamePanel, startButtonPanel;
     JLabel titleNameLabel;
-    Font titleFont = new Font("Times New Roman", Font.PLAIN, 90);
-    Font normalFont = new Font("Times New Roman", Font.PLAIN, 30);
+
+    Font sudokuTitle = Fonts.loadFont(200);
+    Font normalFont = new Font("Serif", Font.PLAIN, 30);
     JButton startButton;
     
     public static void main(String[] args){
@@ -28,33 +31,34 @@ public class SudokuMain extends JFrame{
         window = new JFrame();
         window.setSize(800,600);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.getContentPane().setBackground(Color.black);
+        window.getContentPane().setBackground(Color.white);
         window.setLayout(new BorderLayout());
         window.setVisible(true);
         con = window.getContentPane();
 
         titleNamePanel = new JPanel();
-        titleNamePanel.setBounds(100,100,600,150);
-        titleNamePanel.setBackground(Color.black);
+        titleNamePanel.setBounds(100,100,100,150);
+        titleNamePanel.setBackground(Colours.BG_TO_GUESS);
+
         titleNameLabel = new JLabel("Sudoku");
-        titleNameLabel.setForeground(Color.white);
-        titleNameLabel.setFont(titleFont);
+        titleNameLabel.setForeground(Colours.FG_GIVEN);
+        titleNameLabel.setFont(sudokuTitle);
         
         startButtonPanel = new JPanel(); 
         startButtonPanel.setBounds(100,100,100,100);
-        startButtonPanel.setBackground(Color.black);
+        startButtonPanel.setBackground(Colours.BG_TO_GUESS);
         
         startButton = new JButton("Start!");
-        startButton.setBackground(Color.white);
-        startButton.setForeground(Color.black);
+        startButton.setBackground(Colours.white_yellow);
+        startButton.setForeground(Colours.FG_GIVEN);
         startButton.setFont(normalFont);
         
         
         titleNamePanel.add(titleNameLabel);
         startButtonPanel.add(startButton);
         
-        con.add(titleNamePanel, BorderLayout.CENTER);
-        con.add(startButtonPanel,BorderLayout.SOUTH); 
+        con.add(titleNamePanel, BorderLayout.NORTH);
+        con.add(startButtonPanel,BorderLayout.CENTER); 
         
         StartBtnInputListener listener = new StartBtnInputListener();
         startButton.addActionListener(listener);

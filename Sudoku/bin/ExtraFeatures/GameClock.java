@@ -40,11 +40,15 @@ public class GameClock extends JPanel{
     //Show label (timer) and start timer
     GameClock(){
         super.setPreferredSize(new Dimension(GameBoardPanel.BOARD_WIDTH, 60));
+        super.setBackground(Colours.white_yellow);
 
         timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         super.add(timeLabel);
         timeLabel.setFont(new Font("Verdana",Font.PLAIN,35));
-        timeLabel.setForeground(Colours.FG_NOT_GIVEN);
+
+        timeLabel.setForeground(Colours.FG_GIVEN);
+        timeLabel.setBackground(Colours.white_yellow);
+
         timeLabel.setOpaque(true);
         timeLabel.setHorizontalAlignment(JTextField.CENTER);
 
