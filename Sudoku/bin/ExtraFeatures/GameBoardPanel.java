@@ -4,11 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.bin.GameLogic.Cell;
-import Sudoku.bin.GameLogic.CellStatus;
-import Sudoku.bin.GameLogic.Puzzle;
-import Sudoku.bin.HighScore.HighScore;
-import Sudoku.bin.HighScore.HighScoreDatabase;
+import Sudoku.bin.GameLogic.*;
+import Sudoku.bin.HighScore.*;
+import Sudoku.bin.Utility.*;
 
 public class GameBoardPanel extends JPanel {
    private static final long serialVersionUID = 1L;  // to prevent serial warning
@@ -37,7 +35,7 @@ public class GameBoardPanel extends JPanel {
 	   for (int subRow = 0; subRow < SUBGRID_SIZE; ++subRow) {
 	      for (int subCol = 0; subCol < SUBGRID_SIZE; ++subCol) {
 	         JPanel subGrid = new JPanel(new GridLayout(SUBGRID_SIZE, SUBGRID_SIZE));
-	         subGrid.setBorder(BorderFactory.createLineBorder(Cell.FG_NOT_GIVEN, 1));
+	         subGrid.setBorder(BorderFactory.createLineBorder(Colours.FG_NOT_GIVEN, 1));
 	         super.add(subGrid);   // add sub-grid to main panel
 
 	         for (int row = 0; row < SUBGRID_SIZE; ++row) {

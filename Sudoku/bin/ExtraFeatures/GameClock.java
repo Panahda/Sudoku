@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.bin.GameLogic.Cell;
+import Sudoku.bin.Utility.*;
 
 public class GameClock extends JPanel{
 
@@ -44,7 +44,7 @@ public class GameClock extends JPanel{
         timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
         super.add(timeLabel);
         timeLabel.setFont(new Font("Verdana",Font.PLAIN,35));
-        timeLabel.setForeground(Cell.FG_NOT_GIVEN);
+        timeLabel.setForeground(Colours.FG_NOT_GIVEN);
         timeLabel.setOpaque(true);
         timeLabel.setHorizontalAlignment(JTextField.CENTER);
 
