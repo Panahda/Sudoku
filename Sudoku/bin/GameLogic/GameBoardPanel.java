@@ -5,7 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Sudoku.bin.ExtraFeatures.GameClock;
-import Sudoku.bin.GameLogic.*;
 import Sudoku.bin.HighScore.*;
 import Sudoku.bin.Utility.*;
 

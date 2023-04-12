@@ -8,25 +8,30 @@ public class BGMusic {
     private Clip clip;
     
     public BGMusic(String filename) {
-        try {
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("Sudoku/bin/Utility/music/" + filename).getAbsoluteFile());
+        try{
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("Sudoku/bin/Utility/music/" + filename));
             clip = AudioSystem.getClip();
-            clip.open(audioInputStream);
-        } catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
+            clip.open(audioIn);
+            
+        } catch (UnsupportedAudioFileException e){
+            e.printStackTrace();
+        } catch (IOException e){
+            e.printStackTrace();
+        } catch (LineUnavailableException e){
             e.printStackTrace();
         }
     }
-    
-    public void play() {
-        if (clip != null) {
+        
+    public void play(){
+        if (clip != null){
             clip.setFramePosition(0);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
         }
         System.out.println("music playing...");
     }
     
-    public void stop() {
-        if (clip != null) {
+    public void stop(){
+        if (clip != null){
             clip.stop();
         }
     }
