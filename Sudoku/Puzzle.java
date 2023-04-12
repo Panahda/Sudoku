@@ -201,14 +201,14 @@ public final class Puzzle {
     }
 
     //public method to reset the instance to new numbers; 
-    public void newBoard(){
+    public void newBoard(int x){
         for (int row = 0; row < 9; row++) {
             for (int col = 0; col < 9; col++) {
                numbers[row][col] = 0;
             }
          }
-        fillGameGrid();
-        //diffuilty
-        createMissingDigits2DArray(1/*puzzleMissingDigitArray[0]*/); //temporary
+        fillGameGrid(); 
+        // difficulty
+        createMissingDigits2DArray(puzzleMissingDigitArray[x]);
     }
 }

@@ -60,7 +60,7 @@ public class StartingScreen extends JFrame{
         private class StartBtnInputListener implements ActionListener {
         	@Override
         	public void actionPerformed(ActionEvent evt) {
-        		new SudokuMain();
+        		new DifficultyScreen();
         		window.dispose();
         	}
         }
