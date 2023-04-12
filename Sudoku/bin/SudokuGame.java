@@ -1,11 +1,11 @@
-package Sudoku.Sudoku.bin;
+package Sudoku.bin;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.Sudoku.bin.ExtraFeatures.GameBoardPanel;
-import Sudoku.Sudoku.bin.ExtraFeatures.GameClock;
-import Sudoku.Sudoku.bin.HighScore.HighScore;
+import Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.bin.ExtraFeatures.GameClock;
+import Sudoku.bin.HighScore.HighScore;
 
 /**
  * The main Sudoku program

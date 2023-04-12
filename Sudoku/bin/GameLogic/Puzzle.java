@@ -1,7 +1,7 @@
-package Sudoku.Sudoku.bin.GameLogic;
+package Sudoku.bin.GameLogic;
 import java.util.Random;
 
-import Sudoku.Sudoku.bin.ExtraFeatures.GameBoardPanel;
+import Sudoku.bin.ExtraFeatures.GameBoardPanel;
 
 public final class Puzzle {
 

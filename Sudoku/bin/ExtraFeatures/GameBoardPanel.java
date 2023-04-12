@@ -1,14 +1,14 @@
-package Sudoku.Sudoku.bin.ExtraFeatures;
+package Sudoku.bin.ExtraFeatures;
 
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.Sudoku.bin.GameLogic.Cell;
-import Sudoku.Sudoku.bin.GameLogic.CellStatus;
-import Sudoku.Sudoku.bin.GameLogic.Puzzle;
-import Sudoku.Sudoku.bin.HighScore.HighScore;
-import Sudoku.Sudoku.bin.HighScore.HighScoreDatabase;
+import Sudoku.bin.GameLogic.Cell;
+import Sudoku.bin.GameLogic.CellStatus;
+import Sudoku.bin.GameLogic.Puzzle;
+import Sudoku.bin.HighScore.HighScore;
+import Sudoku.bin.HighScore.HighScoreDatabase;
 
 public class GameBoardPanel extends JPanel {
    private static final long serialVersionUID = 1L;  // to prevent serial warning

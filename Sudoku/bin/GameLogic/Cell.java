@@ -1,4 +1,4 @@
-package Sudoku.Sudoku.bin.GameLogic;
+package Sudoku.bin.GameLogic;
 
 import java.awt.Color;
 import java.awt.Font;

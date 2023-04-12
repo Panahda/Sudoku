@@ -1,9 +1,9 @@
-package Sudoku.Sudoku.bin.ExtraFeatures;
+package Sudoku.bin.ExtraFeatures;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-import Sudoku.Sudoku.bin.SudokuGame;
+import Sudoku.bin.SudokuGame;
 
 public class DifficultySelectionScreen extends JFrame{
     

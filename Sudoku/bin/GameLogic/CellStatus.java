@@ -1,4 +1,4 @@
-package Sudoku.Sudoku.bin.GameLogic;
+package Sudoku.bin.GameLogic;
 /**
  * An enumeration of constants to represent the status
  * of each cell.
