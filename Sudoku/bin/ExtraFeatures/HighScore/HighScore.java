@@ -1,4 +1,4 @@
-package Sudoku.bin.HighScore;
+package Sudoku.bin.ExtraFeatures.HighScore;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;

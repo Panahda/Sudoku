@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Sudoku.bin.ExtraFeatures.GameClock;
-import Sudoku.bin.HighScore.*;
+import Sudoku.bin.ExtraFeatures.HighScore.*;
 import Sudoku.bin.Utility.*;
 
 public class GameBoardPanel extends JPanel {

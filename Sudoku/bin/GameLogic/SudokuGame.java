@@ -4,7 +4,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import Sudoku.bin.ExtraFeatures.GameClock;
-import Sudoku.bin.HighScore.HighScore;
+import Sudoku.bin.ExtraFeatures.HighScore.HighScore;
 import Sudoku.bin.Utility.*;
 
 /**
